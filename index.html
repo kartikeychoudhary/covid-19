@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+
+    <script src="static/p5.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+    <script src="script.js"></script>
+    
+
+  </head>
+
+  <body style="font-family:Ubuntu;">
+
+    <div class="jumbotron jumbotron-fluid m-0 p-0 shadow">
+      <div class="container">
+        <h1 class="display-4">Covid-19 Visualization</h1>
+        <div class="row">
+
+          <select id="scene" onchange="SceneCheck()" class="container selectpicker btn btn-primary btn m-0 p-0 mr-1" style="width: fit-content;max-height: 25px;">
+            <option value=0>People Dont Care</option>
+            <option value=1>People Starts Precautions</option>
+            <option value=2>Govenmnet Lockdown</option>
+            <option value=3>Social Distancing</option>
+          </select>
+
+          <p id="info" class="col m-0 p-0" >
+            Where People are not trying any type of precautions for the Virus, Not washing Hands and Wearing masks.!!
+            Things gets messy very rapidly people got infected in large numbers, Medical resources are limited therefore 
+            most of them Dies without the medical care.
+          </p>
+
+        </div>
+       
+        <p class="col-sm lead"></p>
+        <hr class="my-4">
+        <div class="row">
+          <div class="lead col" >Healthy: <span id="healthy" class="col"> 0</span></div>
+        <div class="lead col" >Infected: <span id="infected" class="col"> 0</span></div>
+        <div class="lead col" >Deaths: <span id="deaths" class="col"> 0</span></div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="row m-0 p-0">
+      <div id="canvas" class="col-lg m-0 p-0"></div>
+      <div id="charts" class="col-lg m-0 p-0">
+        <canvas id="myChart" width="auto" height="200px"></canvas>
+      </div>
+    </div> 
+
+    <hr>
+
+    <div class="Containter row p-4 m-0 border border-danger rounded" style="background-color: #E9ECEF;">
+      <img class="img-fluid col border border-danger m-0 p-0 rounded" src="assests/charts.png" alt="" style="max-width: 500px;max-height: 400px;">
+      <div class="col" style="color:black">
+        <h1>What Graphs Says .?</h1>
+        <p>Covid-19 is a fast pace disease, Meaning in a its <a style="color:black;font-weight: bold;" data-toggle="tooltip" title="Period in which he is infected but do not show any symptoms">incubation period</a> the person does not know he is infected and continue to
+          spread the infection among the people he meets. As in our case here if people does not do anything to prevent it, in no time more and more people will
+          get infected. Its rise is exponential and soon the limited medical resouces gets occupied and no more infected people gets treated for the disease.
+          This leads to increase in number of deaths as shown in the simulation</p>
+        <ul>
+          <li><p>In scene 1 people are careless and do not do anything for prevention therefore its a dead end for the society, Similar scenario was in Italy when the pandemic was started.</p></li>
+          <li><p>In scene 2 people Tends to take Corona seriously and washed hand regularly and uses sanitizers, this may lower the risk of getting infected but it not enough to stop the exponential rise in the infected people.</p></li>
+          <li><p>In scene 3 Government emposes strict Lockdowns, these lockdowns are hard to implement and ofter depends upon the people to make them successfull. Similar lockdowns are adopted by many countries to decrease the spread rate.</p></li>
+          <li><p>In scene 4 There is no lockdown but social distancing is the factor playing along which leads to less and less interaction with the infected ones and this turns out to be very effective as simlations shows.</p></li>
+        </ul>
+      </div>
+    </div>
+    <hr>
+    <div class="col" style="color:black">
+      <h1>What The Issue .?</h1>
+      <p>Covid-19 has a incubation period of around 14 days i.e. if you are infected you won't come to know until the next 14 days which is a very dangerous thing, as you may feel you are 
+        healthy but you will be infected the rest of the people around you for the rest of the 14 days, Who will also infect another people unknowingly and those people will infect anothers ones leading to 
+        growth in infected people exponentialy
+      </p>
+      <p>As we have learned Covid-19 is a fast pace disease and it leads to exponential rise in infected persons and these people runs to the hospitals for medical care
+        but as Each Country only has <span style="color:black;font-weight:bold">Limited Medical Resources</span>, it can't cope hike in the number of patients and many patients
+        are left untreated, This increase the death rate and more and more people gets infected due to them.
+      </p>
+      <p>
+        To overcome the growing rate of infected people we need to cut off going out and stay at home, You cant get infected by staying at home. Which leads to less problems for others. Therefore...
+      </p>
+    </div>
+    <div class="container text-center">
+      <h1 class="row">Stay At Home</h1>
+      <h2 class="row">Save Yourself and Society</h2>
+    </div>
+      
+
+
+    
+
+     <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+  </body>
+</html>
