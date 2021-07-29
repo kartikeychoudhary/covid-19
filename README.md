@@ -1,2 +1,2 @@
 # covid-19
-live at https://kartikey.online/covid-19/index.html
+live at https://covid.kartikeychoudhary.com
